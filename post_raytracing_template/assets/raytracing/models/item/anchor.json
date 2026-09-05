@@ -1,0 +1,15 @@
+{
+    "textures": {
+        "none": "block/stone",
+        "particle": "block/stone"
+    },
+    "elements": [
+        {
+            "from": [0,0,0],
+            "to": [0,0,0],
+            "faces": {
+                "up": {"tintindex": 0, "texture": "#none"}
+            }
+        }
+    ]
+}

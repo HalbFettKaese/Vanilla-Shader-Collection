@@ -1,0 +1,12 @@
+{
+    "model": {
+        "type": "model",
+        "model": "raytracing:item/anchor",
+        "tints": [
+            {
+                "type": "constant",
+                "value": 66051
+            }
+        ]
+    }
+}

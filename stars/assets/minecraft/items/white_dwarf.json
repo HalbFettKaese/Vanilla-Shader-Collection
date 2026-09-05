@@ -1,0 +1,13 @@
+{
+    "model": {
+        "type": "model",
+        "model": "item/white_dwarf",
+        "tints": [
+            {
+                "type": "custom_model_data",
+                "default": 8421504,
+                "index": 0
+            }
+        ]
+    }
+}

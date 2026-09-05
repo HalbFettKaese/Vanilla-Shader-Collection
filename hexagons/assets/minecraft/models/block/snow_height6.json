@@ -1,0 +1,30 @@
+{   "parent": "block/thin_block",
+    "textures": {
+        "particle": "block/snow",
+        "texture": "block/snow"
+    },
+    "elements": [
+		{
+			"from": [7.99, 0, 7.982679491924311],
+			"to": [8.01, 6, 8],
+			"faces": {
+				"north": {"uv": [0, 10, 16, 16], "texture": "#texture"},
+				"east": {"uv": [0, 10, 16, 16], "texture": "#texture"},
+				"west": {"uv": [0, 10, 16, 16], "texture": "#texture"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#texture"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#texture"}
+			}
+		},
+		{
+			"from": [7.99, 0, 8],
+			"to": [8.01, 6, 8.017320508075688],
+			"faces": {
+				"east": {"uv": [0, 10, 16, 16], "texture": "#texture"},
+				"south": {"uv": [0, 10, 16, 16], "texture": "#texture"},
+				"west": {"uv": [0, 10, 16, 16], "texture": "#texture"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#texture"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#texture"}
+			}
+		}
+    ]
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/default_cube",
+    "textures": {
+      "all": "minecraft:block/brown_stained_glass"
+    }
+  }

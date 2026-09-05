@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/default_cube",
+    "textures": {
+      "all": "minecraft:block/red_stained_glass"
+    }
+  }
