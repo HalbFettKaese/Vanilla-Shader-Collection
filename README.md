@@ -1,10 +1,9 @@
 # Vanilla Shader Collection
-This is where I put all my vanilla Minecraft shaders to keep them in one place!
-
 When using any of these, note that any core shaders may be **incompatible** with **sodium** or **modded shaders**.
 
 Only entity core shaders work on sodium. Post shaders are expected to be compatible with most mods.
 
+To download the individual packs, look over to the [Releases](<https://github.com/HalbFettKaese/Vanilla-Shader-Collection/releases>) section.
 ## Core Minimap
 Version: 1.17
 
