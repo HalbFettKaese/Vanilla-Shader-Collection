@@ -40,7 +40,7 @@ https://github.com/user-attachments/assets/158fab51-d2e9-4061-a613-73a63ecca640
 ## Triangles
 Version: 26.3
 
-Turns all blocks into triangular prisms, made for a tutorial (coming soon). I didn't do anything to fix entities not being synced with the blocks.
+Turns all blocks into triangular prisms, made for this [tutorial](<https://youtu.be/3RL5mvejFi8>). I didn't do anything to fix entities not being synced with the blocks.
 
 <img width="1920" height="1017" alt="triangles" src="https://github.com/user-attachments/assets/4417c061-8c27-4701-8163-219843eab695" />
 
