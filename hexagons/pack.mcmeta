@@ -1,6 +1,7 @@
 {
     "pack": {
-        "description": "",
-        "pack_format": 9
+        "description": "Turns the whole world into hexagonal prisms instead of blocks.",
+        "min_format": 97,
+        "max_format": 97
     }
 }

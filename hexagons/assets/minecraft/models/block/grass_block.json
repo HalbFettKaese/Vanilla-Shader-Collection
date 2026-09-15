@@ -1,6 +1,6 @@
 {
     "ambientocclusion": false,
-    "parent": "block/block",
+	"parent": "block/hexagon",
     "textures": {
         "particle": "block/dirt",
         "bottom": "block/dirt",
@@ -10,8 +10,8 @@
     },
     "elements": [
 		{
-			"from": [7.99, 0, 7.982679491924311],
-			"to": [8.01, 16, 8],
+			"from": [6.88, 0, 6.060103095522857],
+			"to": [9.12, 16, 8],
 			"faces": {
 				"north": {"uv": [0, 0, 16, 16], "texture": "#side"},
 				"east": {"uv": [0, 0, 16, 16], "texture": "#side"},
@@ -21,8 +21,8 @@
 			}
 		},
 		{
-			"from": [7.99, 0, 8],
-			"to": [8.01, 16, 8.017320508075688],
+			"from": [6.88, 0, 8],
+			"to": [9.12, 16, 9.939896904477143],
 			"faces": {
 				"east": {"uv": [0, 0, 16, 16], "texture": "#side"},
 				"south": {"uv": [0, 0, 16, 16], "texture": "#side"},
@@ -32,8 +32,8 @@
 			}
 		},
 		{
-			"from": [7.99, 0, 7.982679491924311],
-			"to": [8.01, 16, 8],
+			"from": [6.88, 0, 6.060103095522857],
+			"to": [9.12, 16, 8],
 			"faces": {
 				"north": {"uv": [0, 0, 16, 16], "texture": "#overlay", "tintindex": 0},
 				"east": {"uv": [0, 0, 16, 16], "texture": "#overlay", "tintindex": 0},
@@ -41,8 +41,8 @@
 			}
 		},
 		{
-			"from": [7.99, 0, 8],
-			"to": [8.01, 16, 8.017320508075688],
+			"from": [6.88, 0, 8],
+			"to": [9.12, 16, 9.939896904477143],
 			"faces": {
 				"east": {"uv": [0, 0, 16, 16], "texture": "#overlay", "tintindex": 0},
 				"south": {"uv": [0, 0, 16, 16], "texture": "#overlay", "tintindex": 0},
