@@ -40,15 +40,15 @@ https://github.com/user-attachments/assets/158fab51-d2e9-4061-a613-73a63ecca640
 ## Triangles
 Version: 26.3
 
-Turns all blocks into triangular prisms, made for this [tutorial](<https://youtu.be/3RL5mvejFi8>). I didn't do anything to fix entities not being synced with the blocks.
+Turns all blocks into triangular prisms, made for this [tutorial](<https://youtu.be/3RL5mvejFi8>).
 
 <img width="1920" height="1017" alt="triangles" src="https://github.com/user-attachments/assets/4417c061-8c27-4701-8163-219843eab695" />
 
 
 ## Hexagons
-Version: 1.19.2
+Version: 26.3
 
-Turns all blocks into hexagonal prisms. Is a bit more polished than the triangle version, and also works better because hexagons are more similar to cubes than triangles are.
+Turns all blocks into hexagonal prisms. Unlike the triangle version, it doesn't work for all blocks, but the squish along the x-axis is weaker.
 
 <img width="1920" height="1080" alt="hexagons" src="https://github.com/user-attachments/assets/d993eb37-d6ac-4106-a89c-fdd8ec96d670" />
 
