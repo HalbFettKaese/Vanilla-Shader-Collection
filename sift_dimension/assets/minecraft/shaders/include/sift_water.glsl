@@ -65,7 +65,7 @@ float stars(vec2 uv, float t) {
 
 vec3 water(vec2 uv, vec2 uv2, float time) {
     vec2 offset;
-    vec3 col = clamp(srgb_from_linear_srgb(linear_srgb_from_oklab(clouds(uv, time*0.007, offset))), 0., 1.);
+    vec3 col = clamp(srgb_from_linear_srgb(linear_srgb_from_oklab(clouds(uv*0.3, time*0.015, offset))), 0., 1.);
     uv = uv2 / 10.;
     uv += offset * 0.02;
     float s = stars(uv * 4., time*0.1)*0.1
