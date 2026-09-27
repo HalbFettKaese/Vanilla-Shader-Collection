@@ -8,13 +8,13 @@ To download the individual packs, look over to the [Releases](<https://github.co
 ## Sift Dimension
 Version: 26.3
 
-Replaces all water with the liquid shown in the [Sift dimension preview](https://www.youtube.com/watch?v=oyaou0TZhKQ&t=18s).
+Replaces all water with the ichor shown in the [Sift dimension preview](https://www.youtube.com/watch?v=oyaou0TZhKQ&t=18s).
 
-https://github.com/user-attachments/assets/eec49595-3a79-43da-bad5-dbf2a30c7fbd
+https://github.com/user-attachments/assets/11943743-ff35-4ae2-b338-ab53ace929fc
 
 Optionally, you can edit `core/terrain.fsh` to use a pixelated version:
 
-https://github.com/user-attachments/assets/86013e1b-1b25-41f1-beb1-600ac79b9eed
+https://github.com/user-attachments/assets/d2f44b81-b1fa-4790-8e00-df41a008582e
 
 ## Core Minimap
 Version: 1.17
