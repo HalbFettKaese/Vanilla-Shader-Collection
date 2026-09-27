@@ -10,6 +10,12 @@ Version: 26.3
 
 Replaces all water with the liquid shown in the [Sift dimension preview](https://www.youtube.com/watch?v=oyaou0TZhKQ&t=18s).
 
+https://github.com/user-attachments/assets/eec49595-3a79-43da-bad5-dbf2a30c7fbd
+
+Optionally, you can edit `core/terrain.fsh` to use a pixelated version:
+
+https://github.com/user-attachments/assets/86013e1b-1b25-41f1-beb1-600ac79b9eed
+
 ## Core Minimap
 Version: 1.17
 
