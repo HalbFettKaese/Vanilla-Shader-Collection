@@ -4,6 +4,12 @@ When using any of these, note that any core shaders may be **incompatible** with
 Only entity core shaders work on sodium. Post shaders are expected to be compatible with most mods.
 
 To download the individual packs, look over to the [Releases](<https://github.com/HalbFettKaese/Vanilla-Shader-Collection/releases>) section.
+
+## Sift Dimension
+Version: 26.3
+
+Replaces all water with the liquid shown in the [Sift dimension preview](https://www.youtube.com/watch?v=oyaou0TZhKQ&t=18s).
+
 ## Core Minimap
 Version: 1.17
 
