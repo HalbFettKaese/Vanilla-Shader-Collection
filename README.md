@@ -10,11 +10,7 @@ Version: 26.3
 
 Replaces all lava  with the ichor shown in the [Sift dimension preview](https://www.youtube.com/watch?v=oyaou0TZhKQ&t=18s).
 
-https://github.com/user-attachments/assets/4324d2da-50e4-4390-8513-437603574c0d
-
-Optionally, you can edit `core/terrain.fsh` to use a pixelated version:
-
-https://github.com/user-attachments/assets/75b1a719-f543-4b6a-9994-1398bf99c7c7
+https://github.com/user-attachments/assets/f2b04d8c-0dba-4427-bd57-d51c8fad8797
 
 ## Core Minimap
 Version: 1.17
