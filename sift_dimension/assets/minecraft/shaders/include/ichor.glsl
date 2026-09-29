@@ -76,6 +76,7 @@ float ghost(vec2 uv, float t, float cutoff) {
     float size = 2.*mix(10.,1.,r.x+0.5);
     uv -= (0.5 + r.yz * 0.5) * (1. - 1./size);
     uv *= size;
+    uv.y = 1. - uv.y;
     if (r.x < cutoff || clamp(uv, 1./32., 31./32.) != uv) return 0.0;
     uv = mix(minCoord, maxCoord, uv);
     return texelFetch(Sampler0, ivec2(uv*textureSize(Sampler0, 0)), 0).r * max(0., r.x-cutoff);
@@ -95,11 +96,11 @@ vec3 water(vec2 uv, vec2 uv2, float time) {
 #ifdef PIXELATED
     offset = 0.15*fbm2(vec3(uv2*0.15, time*0.03));
     uv = uv2 / 15.;
-    col += ghost(uv + offset * 0.3 + time * vec2(0, 0.15), time, 0.35);
-    col += ghost(uv*1.5 - offset * 0.2 + time * vec2(0, 0.2), time, 0.43);
+    col += ghost(uv + offset * 0.3 - time * vec2(0, 0.15), time, 0.35);
+    col += ghost(uv*1.5 - offset * 0.2 - time * vec2(0, 0.2), time, 0.43);
 #else
-    col += ghost(uv + offset * 0.3 + time * vec2(0, 0.15), time, 0.35);
-    col += ghost(uv*4.0 - offset * 0.3 + time * vec2(0, 0.2), time, 0.43);
+    col += ghost(uv + offset * 0.3 - time * vec2(0, 0.15), time, 0.35);
+    col += ghost(uv*4.0 - offset * 0.3 - time * vec2(0, 0.2), time, 0.43);
 #endif
     col /= max(1. - s, max(col.r, max(col.g, col.b)));
     col += max(0., density + 0.3) * 0.03;

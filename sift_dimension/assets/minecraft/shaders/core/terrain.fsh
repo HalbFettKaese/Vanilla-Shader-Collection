@@ -27,10 +27,6 @@ layout(location = 7) in vec4 vertex0;
 layout(location = 8) in vec4 vertex1;
 layout(location = 9) in vec4 vertex2;
 layout(location = 10) in vec4 vertex3;
-layout(location = 12) in vec3 uv0;
-layout(location = 13) in vec3 uv1;
-layout(location = 14) in vec3 uv2;
-layout(location = 15) in vec3 uv3;
 
 #ifndef OIT_ALPHA_ONLY
 layout(location = 11) in vec4 lightmapColor;
@@ -56,33 +52,22 @@ vec4 posToUv() {
         p0 = vertex1.xyz / vertex1.w;
         p1 = vertex2.xyz / vertex2.w;
         p2 = vertex3.xyz / vertex3.w;
-        u0 = uv1.xy / uv1.z;
-        u1 = uv2.xy / uv2.z;
-        u2 = uv3.xy / uv3.z;
     } else if (ws.y == 0.0) {
         p0 = vertex0.xyz / vertex0.w;
         p1 = vertex2.xyz / vertex2.w;
         p2 = vertex3.xyz / vertex3.w;
-        u0 = uv0.xy / uv0.z;
-        u1 = uv2.xy / uv2.z;
-        u2 = uv3.xy / uv3.z;
     } else if (ws.z == 0.0) {
         p0 = vertex0.xyz / vertex0.w;
         p1 = vertex1.xyz / vertex1.w;
         p2 = vertex3.xyz / vertex3.w;
-        u0 = uv0.xy / uv0.z;
-        u1 = uv1.xy / uv1.z;
-        u2 = uv3.xy / uv3.z;
     } else {
         p0 = vertex0.xyz / vertex0.w;
         p1 = vertex1.xyz / vertex1.w;
         p2 = vertex2.xyz / vertex2.w;
-        u0 = uv0.xy / uv0.z;
-        u1 = uv1.xy / uv1.z;
-        u2 = uv2.xy / uv2.z;
     }
-    minCoord = min(u0, min(u1, u2));
-    maxCoord = max(u0, max(u1, u2));
+    vec2 atlasSize = vec2(textureSize(Sampler0, 0));
+    minCoord = floor(texCoord0 * atlasSize / 16.) * 16. / atlasSize;
+    maxCoord = ceil(texCoord0 * atlasSize / 16.) * 16. / atlasSize;
     vec3 normal = abs(cross(p2-p0, p1-p0));
     vec3 dir = normalize(forward);
     vec3 pos1 = globalPos;
@@ -100,8 +85,7 @@ vec4 posToUv() {
 }
 
 void main() {
-    vec2 atlasSize = vec2(textureSize(Sampler0, 0));
-    float alpha = round(texelFetch(Sampler0, ivec2(texCoord0 * atlasSize), 0).a * 255.);
+    float alpha = round(texelFetch(Sampler0, ivec2(texCoord0 * textureSize(Sampler0, 0)), 0).a * 255.);
     vec4 color;
     if (alpha == 254.0) {
         vec4 uv = posToUv();
