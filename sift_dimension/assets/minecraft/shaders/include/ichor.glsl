@@ -10,6 +10,9 @@ float sharpness = 8.0;
 float starBrightness = 3.0;
 float densityOffset = 0.2;
 
+vec2 minCoord;
+vec2 maxCoord;
+
 float fbm(vec3 uv) {
     float r = 0.0;
     for (float s = 1.0; s <= 64.; s *= 2.) {
@@ -60,20 +63,44 @@ float stars(vec2 uv, float t) {
     uv = fract(uv);
     uv -= 0.5 + r.yz * 0.5;
     uv /= 0.25 * mix(0.2,1.,r.x+0.5);
-    return smoothstep(0.5, 0., length(uv));
+    return smoothstep(0.5, 0., length(uv)) * (r.x + 0.5);
+}
+
+float ghost(vec2 uv, float t, float cutoff) {
+    t *= 0.3;
+    uv *= 8.0;
+    vec2 id = floor(uv);
+    t += dot(vec2(311.83139, 82.5321), id);
+    vec3 r = random3(vec3(id, 0.0));
+    uv = fract(uv);
+    float size = 2.*mix(10.,1.,r.x+0.5);
+    uv -= (0.5 + r.yz * 0.5) * (1. - 1./size);
+    uv *= size;
+    if (r.x < cutoff || clamp(uv, 1./32., 31./32.) != uv) return 0.0;
+    uv = mix(minCoord, maxCoord, uv);
+    return texelFetch(Sampler0, ivec2(uv*textureSize(Sampler0, 0)), 0).r * max(0., r.x-cutoff);
 }
 
 vec3 water(vec2 uv, vec2 uv2, float time) {
     vec2 offset;
-    vec3 col = clamp(srgb_from_linear_srgb(linear_srgb_from_oklab(clouds(uv*0.3, time*0.015, offset))), 0., 1.);
-    uv = uv2 / 10.;
+    vec3 col = clamp(srgb_from_linear_srgb(linear_srgb_from_oklab(clouds(uv*0.15, time*0.01, offset))), 0., 1.);
+    uv = uv2 / 15.;
     uv += offset * 0.02;
-    float s = stars(uv * 4., time*0.1)*0.1
-            + stars(uv*2. - 30., time*0.25 + 80.)*0.5
-            + stars(uv*1.5 + 30., time*0.5 - 80.)*0.2;
-    float density = starBrightness * (fbm(vec3((uv + offset) * 6., time * 0.008))-densityOffset) / (1.-densityOffset);
+    float s = stars(uv * 4., time*0.13)*0.1
+            + stars(uv*2. - 30., time*0.35 + 80.)*0.5
+            + stars(uv*1.5 + 30., time*0.8 - 80.)*0.2;
+    float density = starBrightness * (fbm(vec3((uv + offset) * 8., time * 0.008))-densityOffset) / (1.-densityOffset);
     s *= max(0., density);
     col += s*s*50.;
+#ifdef PIXELATED
+    offset = 0.15*fbm2(vec3(uv2*0.15, time*0.03));
+    uv = uv2 / 15.;
+    col += ghost(uv + offset * 0.3 + time * vec2(0, 0.15), time, 0.35);
+    col += ghost(uv*1.5 - offset * 0.2 + time * vec2(0, 0.2), time, 0.43);
+#else
+    col += ghost(uv + offset * 0.3 + time * vec2(0, 0.15), time, 0.35);
+    col += ghost(uv*4.0 - offset * 0.3 + time * vec2(0, 0.2), time, 0.43);
+#endif
     col /= max(1. - s, max(col.r, max(col.g, col.b)));
     col += max(0., density + 0.3) * 0.03;
     return col;

@@ -35,6 +35,10 @@ layout(location = 7) out vec4 vertex0;
 layout(location = 8) out vec4 vertex1;
 layout(location = 9) out vec4 vertex2;
 layout(location = 10) out vec4 vertex3;
+layout(location = 12) out vec3 uv0;
+layout(location = 13) out vec3 uv1;
+layout(location = 14) out vec3 uv2;
+layout(location = 15) out vec3 uv3;
 
 void main() {
     vertex0 = vertex1 = vertex2 = vertex3 = vec4(0);
@@ -43,6 +47,13 @@ void main() {
         case 1: vertex1 = vec4(Position, 1); break;
         case 2: vertex2 = vec4(Position, 1); break;
         case 3: vertex3 = vec4(Position, 1); break;
+    }
+    uv0 = uv1 = uv2 = uv3 = vec3(0);
+    switch (gl_VertexIndex % 4) {
+        case 0: uv0 = vec3(UV0, 1); break;
+        case 1: uv1 = vec3(UV0, 1); break;
+        case 2: uv2 = vec3(UV0, 1); break;
+        case 3: uv3 = vec3(UV0, 1); break;
     }
     globalPos = Position + ChunkPosition;
     vec3 pos = Position + (ChunkPosition - CameraBlockPos) + CameraOffset;
