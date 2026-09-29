@@ -1,7 +1,7 @@
 #version 330
 #extension GL_ARB_separate_shader_objects : require
 
-//#define PIXELATED
+#define PIXELATED
 
 #include <minecraft:fog.glsl>
 #include <minecraft:globals.glsl>
